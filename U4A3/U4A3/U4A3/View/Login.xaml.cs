@@ -20,16 +20,45 @@ namespace U4A3.View
 			InitializeComponent ();
 		}
 
-		private void Button_Login_Clicked(object sender, EventArgs e)
+		private async void Button_Login_Clicked(object sender, EventArgs e)
 		{
-			// TODO: Fix error messages and add login code
-			if (Entry_Username.Text == "")
+			// Checks if username and password textboxes are not empty
+			if (Entry_Username.Text != "" && Entry_Password.Text != "")
 			{
-				// Label_ErrorUsername.Text = "Enter a username";
+				// Creates new User with username and password that the user entered on the login screen
+				User user = new User()
+				{
+					Username = Entry_Username.Text,
+					Password = Entry_Password.Text
+				};
+
+				// Returns a list of the entire database
+				List<User> DBReturn = await App.Database.GetAll();
+
+				// For every item in the list
+				foreach (User item in DBReturn)
+				{
+					// If the username and passwords match between the database and user input
+					if (item.Username == user.Username && item.Password == user.Password)
+					{
+						// Display login successful message
+						// TODO: Remove alert
+						await DisplayAlert("Login successful", "Login succeeeded", "Great!");
+						// Changes the current page
+						// TODO: Change to home page
+						App.Current.MainPage = new UserTest();
+					}
+				}
+
+				// If it doesn't redirect away, login has failed
+				await DisplayAlert("Login failed", "Please check that your username and password are correct and try again", "OK");
 			}
-			if (Entry_Password.Text == "")
+			else
 			{
-				// Label_ErrorPassword.Text = "Enter a password";
+				if (Entry_Username.Text == "")
+					Label_UsernameError.Text = "Please enter your username";
+				if (Entry_Password.Text == "")
+					Label_PasswordError.Text = "Please enter your password";
 			}
 		}
 
@@ -40,7 +69,7 @@ namespace U4A3.View
 
 		private void Button_PassReset_Clicked(object sender, EventArgs e)
 		{
-			App.Current.MainPage = new Register();
+			App.Current.MainPage = new UserTest();
 		}
 	}
 }

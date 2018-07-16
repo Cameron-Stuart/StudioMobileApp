@@ -41,9 +41,20 @@ namespace U4A3.View
 					Type = Picker_Type.Items[Picker_Type.SelectedIndex]
 				};
 
-				await App.Database.Insert(user);
+				List<User> DB = await App.Database.GetAll();
 
-				App.Current.MainPage = new Login();
+				foreach (User item in DB)
+				{
+					if (item.Username == user.Username)
+						await DisplayAlert("Registration failed", "This username is already in use, please use another", "OK");
+					else if (item.Email == user.Email)
+						await DisplayAlert("Registration failed", "This email is already in use, please use another", "OK");
+					else
+					{
+						await App.Database.Insert(user);
+						App.Current.MainPage = new Login();
+					}
+				}
 			}
 			else
 			{
