@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "U4A3.Android", "U4A3\U4A3.Android\U4A3.Android.csproj", "{1113BBEF-A48D-4EA0-84D9-CF97811F806F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "U4A3", "U4A3\U4A3\U4A3.csproj", "{6D963EEB-6C8A-4729-B7B6-0B5CCA048211}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "U4A3", "U4A3\U4A3\U4A3.csproj", "{6D963EEB-6C8A-4729-B7B6-0B5CCA048211}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

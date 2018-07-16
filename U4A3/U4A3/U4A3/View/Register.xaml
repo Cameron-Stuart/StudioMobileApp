@@ -17,11 +17,16 @@
 				<RowDefinition Height="20" />
 				<RowDefinition Height="200" />
 				<RowDefinition Height="20" />
-				<RowDefinition Height="60" />
-				<RowDefinition Height="60" />
-				<RowDefinition Height="60" />
-				<RowDefinition Height="60" />
-				<RowDefinition Height="60" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="20" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="20" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="20" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="20" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="20" />
 				<RowDefinition Height="54" />
 			</Grid.RowDefinitions>
 			
@@ -39,44 +44,88 @@
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3"
 				   Placeholder="Name" />
-			
+
+			<!-- Name error label -->
+			<Label x:Name="Label_NameError"
+				   Grid.Row="4"
+				   Grid.Column="1"
+				   Grid.ColumnSpan="3" 
+				   TextColor="OrangeRed"/>
+
 			<!-- Username entry -->
 			<Entry x:Name="Entry_Username"
-				   Grid.Row="4"
+				   Grid.Row="5"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3"
 				   Placeholder="Username" />
-			
+
+			<!-- Username error label -->
+			<Label x:Name="Label_UsernameError"
+				   Grid.Row="6"
+				   Grid.Column="1"
+				   Grid.ColumnSpan="3" 
+				   TextColor="OrangeRed"/>
+
 			<!-- Email entry -->
 			<Entry x:Name="Entry_Email"
-				   Grid.Row="5"
+				   Grid.Row="7"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3"
 				   Placeholder="Email" />
 
+			<!-- Email error label -->
+			<Label x:Name="Label_EmailError"
+				   Grid.Row="8"
+				   Grid.Column="1"
+				   Grid.ColumnSpan="3" 
+				   TextColor="OrangeRed"/>
+
 			<!-- Password entry -->
 			<Entry x:Name="Entry_Password"
-				   Grid.Row="6"
+				   Grid.Row="9"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3"
 				   Placeholder="Password"
 				   IsPassword="True" />
 
+			<!-- Password error label -->
+			<Label x:Name="Label_PasswordError"
+				   Grid.Row="10"
+				   Grid.Column="1"
+				   Grid.ColumnSpan="3" 
+				   TextColor="OrangeRed"/>
+
 			<!-- Type picker -->
 			<Picker x:Name="Picker_Type" 
 					Title="Account type"
-					Grid.Row="7"
+					Grid.Row="11"
 					Grid.Column="1"
-					Grid.ColumnSpan="3" />
+					Grid.ColumnSpan="3" >
+				<Picker.ItemsSource>
+					<x:Array Type="{x:Type x:String}">
+						<x:String>Student</x:String>
+						<x:String>Teacher</x:String>
+						<x:String>Parent</x:String>
+					</x:Array>
+				</Picker.ItemsSource>
+			</Picker>
+
+			<!-- Type picker error label -->
+			<Label x:Name="Label_TypeError"
+				   Grid.Row="4"
+				   Grid.Column="1"
+				   Grid.ColumnSpan="3" 
+				   TextColor="OrangeRed"/>
 
 			<!-- Register button -->
 			<Button x:Name="Button_Register"
-					Grid.Row="6"
+					Grid.Row="13"
 					Grid.Column="1"
 					Grid.ColumnSpan="3"
 					Text="Register"
 					BackgroundColor="DodgerBlue"
-					TextColor="White" />
+					TextColor="White"
+					Clicked="Button_Register_Clicked" />
 		</Grid>
 	</ContentPage.Content>
 </ContentPage>

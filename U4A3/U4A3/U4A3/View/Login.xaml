@@ -17,8 +17,10 @@
 				<RowDefinition Height="20" />
 				<RowDefinition Height="200" />
 				<RowDefinition Height="*" />
-				<RowDefinition Height="60" />
-				<RowDefinition Height="60" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="20" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="20" />
 				<RowDefinition Height="40" />
 				<RowDefinition Height="54" />
 				<RowDefinition Height="70" />
@@ -40,29 +42,44 @@
 				   Grid.Row="3"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3"
-				   Placeholder="Username / Email Address"/>
+				   Placeholder="Username"/>
+
+			<!-- Username error label -->
+			<Label x:Name="Label_UsernameError"
+				   Grid.Row="4"
+				   Grid.Column="1"
+				   Grid.ColumnSpan="3" 
+				   TextColor="OrangeRed"/>
+
 			<!-- Password entry -->
 			<Entry x:Name="Entry_Password"
 				   IsPassword="True"
-				   Grid.Row="4"
+				   Grid.Row="5"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3"
 				   Placeholder="Password"/>
+			
+			<!-- Password error label -->
+			<Label x:Name="Label_PasswordError"
+				   Grid.Row="6"
+				   Grid.Column="1"
+				   Grid.ColumnSpan="3" 
+				   TextColor="OrangeRed"/>
 
 			<!-- Remember me switch and corresponding label -->
 			<Label Text="Remember my login information"
-				   Grid.Row="5"
+				   Grid.Row="7"
 				   Grid.Column="1" 
 				   Grid.ColumnSpan="2"
 				   VerticalTextAlignment="Center"
 				   HorizontalTextAlignment="End" />
 			<Switch x:Name="Switch_RememberMe"
-					Grid.Row="5"
+					Grid.Row="7"
 					Grid.Column="3" />
 
 			<!-- Login button -->
 			<Button x:Name="Button_Login"
-					Grid.Row="6"
+					Grid.Row="8"
 					Grid.Column="1"
 					Grid.ColumnSpan="3"
 					Text="Login"
@@ -76,17 +93,17 @@
 					 WidthRequest="9999999999"
 					 Grid.Column="0"
 					 Grid.ColumnSpan="5"
-					 Grid.Row="8"
+					 Grid.Row="10"
 					 Color="LightGray"/>
 
 			<!-- Bottom row buttons -->
 			<Button x:Name="Button_Register"
-					Grid.Row="9"
+					Grid.Row="11"
 					Grid.Column="1"
 					Text="Register"
 					Clicked="Button_Register_Clicked"/>
 			<Button x:Name="Button_PassReset"
-					Grid.Row="9"
+					Grid.Row="]11"
 					Grid.Column="3"
 					Text="Reset Password"
 					Clicked="Button_PassReset_Clicked"/>
