@@ -1,6 +1,7 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using U4A3.View;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace U4A3

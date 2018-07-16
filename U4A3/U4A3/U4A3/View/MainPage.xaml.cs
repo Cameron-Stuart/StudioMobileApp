@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace U4A3
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace U4A3.View
 {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MainPage : ContentPage
 	{
-		public MainPage()
+		public MainPage ()
 		{
-			InitializeComponent();
+			InitializeComponent ();
 		}
 	}
 }
