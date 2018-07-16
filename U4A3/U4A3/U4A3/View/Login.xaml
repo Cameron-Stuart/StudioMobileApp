@@ -66,17 +66,6 @@
 				   Grid.ColumnSpan="3" 
 				   TextColor="OrangeRed"/>
 
-			<!-- Remember me switch and corresponding label -->
-			<Label Text="Remember my login information"
-				   Grid.Row="7"
-				   Grid.Column="1" 
-				   Grid.ColumnSpan="2"
-				   VerticalTextAlignment="Center"
-				   HorizontalTextAlignment="End" />
-			<Switch x:Name="Switch_RememberMe"
-					Grid.Row="7"
-					Grid.Column="3" />
-
 			<!-- Login button -->
 			<Button x:Name="Button_Login"
 					Grid.Row="8"

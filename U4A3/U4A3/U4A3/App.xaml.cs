@@ -16,7 +16,7 @@ namespace U4A3
 		{
 			get
 			{
-				// Initialises teh database if it is null
+				// Initialises the database if it is null
 				if (database == null)
 					database = new UserDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "User.db3"));
 
