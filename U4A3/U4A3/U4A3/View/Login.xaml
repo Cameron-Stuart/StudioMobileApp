@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="U4A3.View.MainPage">
+             x:Class="U4A3.View.Login">
     <ContentPage.Content>
 		<Grid>
+			<!-- Column definitions -->
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="15" />
 				<ColumnDefinition Width="*" />
@@ -11,9 +12,11 @@
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="15" />
 			</Grid.ColumnDefinitions>
+			<!-- Row definitions -->
 			<Grid.RowDefinitions>
-				<RowDefinition Height="*" />
+				<RowDefinition Height="20" />
 				<RowDefinition Height="200" />
+				<RowDefinition Height="*" />
 				<RowDefinition Height="60" />
 				<RowDefinition Height="60" />
 				<RowDefinition Height="40" />
@@ -24,6 +27,7 @@
 				<RowDefinition Height="5" />
 			</Grid.RowDefinitions>
 
+			<!-- Studio logo -->
 			<Image Source="studio_logo.png"
 				   Grid.Row="1"
 				   Grid.Column="1"
@@ -31,50 +35,61 @@
 				   HorizontalOptions="Center"
 				   VerticalOptions="Center" />
 
+			<!-- Username entry -->
 			<Entry x:Name="Entry_Username"
-				   Grid.Row="2"
+				   Grid.Row="3"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3"
 				   Placeholder="Username / Email Address"/>
-			
+			<!-- Password entry -->
 			<Entry x:Name="Entry_Password"
 				   IsPassword="True"
-				   Grid.Row="3"
+				   Grid.Row="4"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3"
 				   Placeholder="Password"/>
 
+			<!-- Remember me switch and corresponding label -->
 			<Label Text="Remember my login information"
-				   Grid.Row="4"
+				   Grid.Row="5"
 				   Grid.Column="1" 
 				   Grid.ColumnSpan="2"
 				   VerticalTextAlignment="Center"
 				   HorizontalTextAlignment="End" />
 			<Switch x:Name="Switch_RememberMe"
-					Grid.Row="4"
+					Grid.Row="5"
 					Grid.Column="3" />
 
-			<Button Grid.Row="5"
+			<!-- Login button -->
+			<Button x:Name="Button_Login"
+					Grid.Row="6"
 					Grid.Column="1"
 					Grid.ColumnSpan="3"
 					Text="Login"
 					BackgroundColor="DodgerBlue"
-					TextColor="White"/>
+					TextColor="White"
+					Clicked="Button_Login_Clicked" />
 
+			<!-- Bottom seperator line -->
 			<BoxView VerticalOptions="CenterAndExpand"
 					 HorizontalOptions="CenterAndExpand"
 					 WidthRequest="9999999999"
 					 Grid.Column="0"
 					 Grid.ColumnSpan="5"
-					 Grid.Row="7"
+					 Grid.Row="8"
 					 Color="LightGray"/>
 
-			<Button Grid.Row="8"
+			<!-- Bottom row buttons -->
+			<Button x:Name="Button_Register"
+					Grid.Row="9"
 					Grid.Column="1"
-					Text="Register" />
-			<Button Grid.Row="8"
+					Text="Register"
+					Clicked="Button_Register_Clicked"/>
+			<Button x:Name="Button_PassReset"
+					Grid.Row="9"
 					Grid.Column="3"
-					Text="Reset Password" />
+					Text="Reset Password"
+					Clicked="Button_PassReset_Clicked"/>
 		</Grid>
     </ContentPage.Content>
 </ContentPage>

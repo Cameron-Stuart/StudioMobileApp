@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace U4A3.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MainPage : ContentPage
+	public partial class Register : ContentPage
 	{
-		public MainPage ()
+		public Register ()
 		{
 			InitializeComponent ();
 		}
