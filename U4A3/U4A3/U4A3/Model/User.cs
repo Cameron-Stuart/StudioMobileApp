@@ -2,6 +2,9 @@
 
 namespace U4A3.Model
 {
+	/// <summary>
+	/// Data type for storing user information in the database
+	/// </summary>
     public class User
     {
 		[PrimaryKey, AutoIncrement]

@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace U4A3.Data
 {
-	// The database containing user information
+	/// <summary>
+	/// Database storing user information
+	/// </summary>
     public class UserDatabase
     {
 		// New readonly asynchronous database connection
