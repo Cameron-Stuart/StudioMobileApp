@@ -2,6 +2,7 @@
 
 using Android.App;
 using Android.Content.PM;
+using Android.Util;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
@@ -19,9 +20,20 @@ namespace U4A3.Droid
 
             base.OnCreate(bundle);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App());
-        }
+			global::Xamarin.Forms.Forms.Init(this, bundle);
+
+			// get the accent color from your theme
+			var themeAccentColor = new TypedValue();
+			this.Theme.ResolveAttribute(Resource.Attribute.colorAccent, themeAccentColor, true);
+			var droidAccentColor = new Android.Graphics.Color(themeAccentColor.Data);
+
+			// set Xamarin Color.Accent to match the theme's accent color
+			var accentColorProp = typeof(Xamarin.Forms.Color).GetProperty(nameof(Xamarin.Forms.Color.Accent), System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+			var xamarinAccentColor = new Xamarin.Forms.Color(30, 144, 255, 255);
+			accentColorProp.SetValue(null, xamarinAccentColor, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static, null, null, System.Globalization.CultureInfo.CurrentCulture);
+
+			LoadApplication(new App());
+		}
     }
 }
 

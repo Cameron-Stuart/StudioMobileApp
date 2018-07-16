@@ -3,10 +3,78 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="U4A3.View.MainPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="15" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="20" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="15" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="200" />
+				<RowDefinition Height="60" />
+				<RowDefinition Height="60" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="54" />
+				<RowDefinition Height="70" />
+				<RowDefinition Height="1" />
+				<RowDefinition Height="54" />
+				<RowDefinition Height="5" />
+			</Grid.RowDefinitions>
+
+			<Image Source="studio_logo.png"
+				   Grid.Row="1"
+				   Grid.Column="1"
+				   Grid.ColumnSpan="3"
+				   HorizontalOptions="Center"
+				   VerticalOptions="Center" />
+
+			<Entry x:Name="Entry_Username"
+				   Grid.Row="2"
+				   Grid.Column="1"
+				   Grid.ColumnSpan="3"
+				   Placeholder="Username / Email Address"/>
+			
+			<Entry x:Name="Entry_Password"
+				   IsPassword="True"
+				   Grid.Row="3"
+				   Grid.Column="1"
+				   Grid.ColumnSpan="3"
+				   Placeholder="Password"/>
+
+			<Label Text="Remember my login information"
+				   Grid.Row="4"
+				   Grid.Column="1" 
+				   Grid.ColumnSpan="2"
+				   VerticalTextAlignment="Center"
+				   HorizontalTextAlignment="End" />
+			<Switch x:Name="Switch_RememberMe"
+					Grid.Row="4"
+					Grid.Column="3" />
+
+			<Button Grid.Row="5"
+					Grid.Column="1"
+					Grid.ColumnSpan="3"
+					Text="Login"
+					BackgroundColor="DodgerBlue"
+					TextColor="White"/>
+
+			<BoxView VerticalOptions="CenterAndExpand"
+					 HorizontalOptions="CenterAndExpand"
+					 WidthRequest="9999999999"
+					 Grid.Column="0"
+					 Grid.ColumnSpan="5"
+					 Grid.Row="7"
+					 Color="LightGray"/>
+
+			<Button Grid.Row="8"
+					Grid.Column="1"
+					Text="Register" />
+			<Button Grid.Row="8"
+					Grid.Column="3"
+					Text="Reset Password" />
+		</Grid>
     </ContentPage.Content>
 </ContentPage>
