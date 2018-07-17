@@ -14,9 +14,7 @@
 			</Grid.ColumnDefinitions>
 			<!-- Row definitions -->
 			<Grid.RowDefinitions>
-				<RowDefinition Height="20" />
 				<RowDefinition Height="200" />
-				<RowDefinition Height="20" />
 				<RowDefinition Height="40" />
 				<RowDefinition Height="20" />
 				<RowDefinition Height="40" />
@@ -28,11 +26,12 @@
 				<RowDefinition Height="40" />
 				<RowDefinition Height="20" />
 				<RowDefinition Height="54" />
+				<RowDefinition Height="54" />
 			</Grid.RowDefinitions>
 			
 			<!-- Studio logo -->
 			<Image Source="studio_logo.png"
-				   Grid.Row="1"
+				   Grid.Row="0"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3"
 				   HorizontalOptions="Center"
@@ -40,49 +39,49 @@
 
 			<!-- Name entry -->
 			<Entry x:Name="Entry_Name"
-				   Grid.Row="3"
+				   Grid.Row="1"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3"
 				   Placeholder="Name" />
 
 			<!-- Name error label -->
 			<Label x:Name="Label_NameError"
-				   Grid.Row="4"
+				   Grid.Row="2"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3" 
 				   TextColor="OrangeRed"/>
 
 			<!-- Username entry -->
 			<Entry x:Name="Entry_Username"
-				   Grid.Row="5"
+				   Grid.Row="3"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3"
 				   Placeholder="Username" />
 
 			<!-- Username error label -->
 			<Label x:Name="Label_UsernameError"
-				   Grid.Row="6"
+				   Grid.Row="4"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3" 
 				   TextColor="OrangeRed"/>
 
 			<!-- Email entry -->
 			<Entry x:Name="Entry_Email"
-				   Grid.Row="7"
+				   Grid.Row="5"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3"
 				   Placeholder="Email" />
 
 			<!-- Email error label -->
 			<Label x:Name="Label_EmailError"
-				   Grid.Row="8"
+				   Grid.Row="6"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3" 
 				   TextColor="OrangeRed"/>
 
 			<!-- Password entry -->
 			<Entry x:Name="Entry_Password"
-				   Grid.Row="9"
+				   Grid.Row="7"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3"
 				   Placeholder="Password"
@@ -90,7 +89,7 @@
 
 			<!-- Password error label -->
 			<Label x:Name="Label_PasswordError"
-				   Grid.Row="10"
+				   Grid.Row="8"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3" 
 				   TextColor="OrangeRed"/>
@@ -98,7 +97,7 @@
 			<!-- Type picker -->
 			<Picker x:Name="Picker_Type" 
 					Title="Account type"
-					Grid.Row="11"
+					Grid.Row="9"
 					Grid.Column="1"
 					Grid.ColumnSpan="3" >
 				<Picker.ItemsSource>
@@ -112,20 +111,30 @@
 
 			<!-- Type picker error label -->
 			<Label x:Name="Label_TypeError"
-				   Grid.Row="4"
+				   Grid.Row="10"
 				   Grid.Column="1"
 				   Grid.ColumnSpan="3" 
 				   TextColor="OrangeRed"/>
 
 			<!-- Register button -->
 			<Button x:Name="Button_Register"
-					Grid.Row="13"
+					Grid.Row="11"
 					Grid.Column="1"
 					Grid.ColumnSpan="3"
 					Text="Register"
 					BackgroundColor="DodgerBlue"
 					TextColor="White"
 					Clicked="Button_Register_Clicked" />
+
+			<!-- Login button -->
+			<Button x:Name="Button_Login"
+					Grid.Row="12"
+					Grid.Column="1"
+					Grid.ColumnSpan="3"
+					Text="Login"
+					BackgroundColor="DodgerBlue"
+					TextColor="White"
+					Clicked="Button_Login_Clicked" />
 		</Grid>
 	</ContentPage.Content>
 </ContentPage>

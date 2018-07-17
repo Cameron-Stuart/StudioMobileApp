@@ -43,16 +43,24 @@ namespace U4A3.View
 
 				List<User> DB = await App.Database.GetAll();
 
-				foreach (User item in DB)
+				if (DB.Count == 0)
 				{
-					if (item.Username == user.Username)
-						await DisplayAlert("Registration failed", "This username is already in use, please use another", "OK");
-					else if (item.Email == user.Email)
-						await DisplayAlert("Registration failed", "This email is already in use, please use another", "OK");
-					else
+					await App.Database.Insert(user);
+					App.Current.MainPage = new Login();
+				}
+				else
+				{
+					foreach (User item in DB)
 					{
-						await App.Database.Insert(user);
-						App.Current.MainPage = new Login();
+						if (item.Username == user.Username)
+							await DisplayAlert("Registration failed", "This username is already in use, please use another", "OK");
+						else if (item.Email == user.Email)
+							await DisplayAlert("Registration failed", "This email is already in use, please use another", "OK");
+						else
+						{
+							await App.Database.Insert(user);
+							App.Current.MainPage = new Login();
+						}
 					}
 				}
 			}
@@ -70,7 +78,13 @@ namespace U4A3.View
 					Label_EmailError.Text = "Please enter a valid email";
 				if (Picker_Type.SelectedIndex == -1)
 					Label_TypeError.Text = "Please select an account type";
+				await DisplayAlert("Registration failed", "Unknown error", "OK");
 			}
+		}
+
+		private void Button_Login_Clicked(object sender, EventArgs e)
+		{
+			App.Current.MainPage = new Login();
 		}
 	}
 }
