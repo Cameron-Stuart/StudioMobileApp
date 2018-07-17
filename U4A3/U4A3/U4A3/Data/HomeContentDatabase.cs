@@ -8,28 +8,28 @@ namespace U4A3.Data
 	/// <summary>
 	/// Database storing user information
 	/// </summary>
-    public class UserDatabase
-    {
+	public class HomeContentDatabase
+	{
 		// New readonly asynchronous database connection
 		readonly SQLiteAsyncConnection database;
 
-		public UserDatabase(string Path)
+		public HomeContentDatabase(string Path)
 		{
 			database = new SQLiteAsyncConnection(Path);
 
-			database.CreateTableAsync<HomeContent>().Wait();
+			database.CreateTableAsync<User>().Wait();
 		}
 
 		// Insert user information into the database
-		public Task Insert(HomeContent Item)
+		public Task Insert(User Item)
 		{
 			return database.InsertAsync(Item);
 		}
 
 		// Get all user information
-		public Task<List<HomeContent>> GetAll()
+		public Task<List<User>> GetAll()
 		{
-			return database.Table<HomeContent>().ToListAsync();
+			return database.Table<User>().ToListAsync();
 		}
-    }
+	}
 }
