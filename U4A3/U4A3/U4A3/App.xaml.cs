@@ -25,6 +25,20 @@ namespace U4A3
 			}
 		}
 
+		private static HomeContentDatabase homeDatabase;
+		public static HomeContentDatabase HomeDatabase
+		{
+			get
+			{
+				// Initialises the database if it is null
+				if (homeDatabase == null)
+					homeDatabase = new HomeContentDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Home.db3"));
+
+				// Returns the database
+				return homeDatabase;
+			}
+		}
+
 		public App()
 		{
 			InitializeComponent();

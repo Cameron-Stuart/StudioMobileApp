@@ -21,15 +21,15 @@ namespace U4A3.Data
 		}
 
 		// Insert user information into the database
-		public Task Insert(HomeContent Item)
+		public Task Insert(User Item)
 		{
 			return database.InsertAsync(Item);
 		}
 
 		// Get all user information
-		public Task<List<HomeContent>> GetAll()
+		public Task<List<User>> GetAll()
 		{
-			return database.Table<HomeContent>().ToListAsync();
+			return database.Table<User>().ToListAsync();
 		}
     }
 }

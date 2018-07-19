@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace U4A3.View
+namespace U4A3.View.Temp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class UserTest : ContentPage
