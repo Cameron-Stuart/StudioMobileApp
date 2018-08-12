@@ -57,7 +57,7 @@ namespace U4A3.View
 
 						// Changes the current page
 						// TODO: Change to home page
-						App.Current.MainPage = new UserTest();
+						App.Current.MainPage = new Temp.UserTest();
 					}
 					else
 					{
@@ -86,7 +86,7 @@ namespace U4A3.View
 
 		private void Button_PassReset_Clicked(object sender, EventArgs e)
 		{
-			App.Current.MainPage = new UserTest();
+			App.Current.MainPage = new Temp.AddContent();
 		}
 	}
 }

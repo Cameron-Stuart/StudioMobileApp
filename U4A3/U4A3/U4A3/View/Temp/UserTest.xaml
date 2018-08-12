@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="U4A3.View.UserTest">
+             x:Class="U4A3.View.Temp.UserTest">
 	<StackLayout>
-		<!-- The list showing all ToDos as a vertically stacked list -->
+		<!-- The list showing all users as a vertically stacked list -->
 		<ListView x:Name="LVToDo">
 			<ListView.ItemTemplate>
 				<DataTemplate>

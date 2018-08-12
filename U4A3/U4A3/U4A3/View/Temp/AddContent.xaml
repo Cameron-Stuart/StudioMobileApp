@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U4A3.View.Temp.AddContent">
+	<StackLayout>
+		<!-- The list showing all ToDos as a vertically stacked list -->
+		<Entry x:Name="Entry_Title" 
+			   Placeholder="Title" />
+		<Entry x:Name="Entry_Content"
+			   Placeholder="Content" />
+		<Entry x:Name="Entry_URI"
+			   Placeholder="Image URI" />
+		<Button x:Name="Button_Add"
+				Clicked="Button_Add_Clicked"
+				Text="Add content" />
+
+		<ListView x:Name="LVDisplayContent">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<!-- Horizontal stack layout -->
+						<StackLayout Orientation="Vertical">
+							<!--<Image Source="{Binding ImageURI}" />-->
+							<Label Text="{Binding Title}" 
+								   FontSize="Large"/>
+							<Label Text="{Binding Content}" />
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentPage>

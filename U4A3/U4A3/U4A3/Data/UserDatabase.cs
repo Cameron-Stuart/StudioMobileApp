@@ -17,7 +17,7 @@ namespace U4A3.Data
 		{
 			database = new SQLiteAsyncConnection(Path);
 
-			database.CreateTableAsync<User>().Wait();
+			database.CreateTableAsync<HomeContent>().Wait();
 		}
 
 		// Insert user information into the database
@@ -26,10 +26,10 @@ namespace U4A3.Data
 			return database.InsertAsync(Item);
 		}
 
-        // Get all user information
-        public Task<List<User>> GetAll()
-        {
-            return database.Table<User>().ToListAsync();
-        }
+		// Get all user information
+		public Task<List<User>> GetAll()
+		{
+			return database.Table<User>().ToListAsync();
+		}
     }
 }
