@@ -17,19 +17,19 @@ namespace U4A3.Data
 		{
 			database = new SQLiteAsyncConnection(Path);
 
-			database.CreateTableAsync<User>().Wait();
+			database.CreateTableAsync<HomeContent>().Wait();
 		}
 
 		// Insert user information into the database
-		public Task Insert(User Item)
+		public Task Insert(HomeContent Item)
 		{
 			return database.InsertAsync(Item);
 		}
 
 		// Get all user information
-		public Task<List<User>> GetAll()
+		public Task<List<HomeContent>> GetAll()
 		{
-			return database.Table<User>().ToListAsync();
+			return database.Table<HomeContent>().ToListAsync();
 		}
 	}
 }
