@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U4A3.View.AddContent">
+    <StackLayout>
+        <Entry x:Name="Entry_Title" 
+			   Placeholder="Title" />
+        <Entry x:Name="Entry_Content"
+			   Placeholder="Content" />
+        <Button x:Name="Button_Add"
+				Clicked="Button_Add_Clicked"
+				Text="Add content" />
+    </StackLayout>
+</ContentPage>

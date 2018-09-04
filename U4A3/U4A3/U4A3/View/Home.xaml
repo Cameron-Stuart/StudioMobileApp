@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U4A3.View.Home"
+             Title="Home"
+             NavigationPage.HasBackButton="False">
+    <StackLayout>
+		<!-- The list showing all users as a vertically stacked list -->
+		<ListView x:Name="ListView_HomeContent">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<!-- Horizontal stack layout -->
+						<StackLayout Orientation="Vertical">
+							<Label Text="{Binding Title}" 
+                                   FontSize="Large" />
+                            
+							<Label Text="{Binding Content}" />
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+        <!-- Button that will add content to the home page (teacher only) -->
+        <Button x:Name="Button_AddContent" 
+                Clicked="Button_AddContent_Clicked" 
+                Text="Add Content" />
+    </StackLayout>
+</ContentPage>

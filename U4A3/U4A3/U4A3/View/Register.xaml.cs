@@ -46,20 +46,19 @@ namespace U4A3.View
 				if (DB.Count == 0)
 				{
 					await App.Database.Insert(user);
-					App.Current.MainPage = new Login();
-				}
+                    await Navigation.PushAsync(new Login());
+                }
 				else
 				{
 					foreach (User item in DB)
 					{
 						if (item.Username == user.Username)
-							await DisplayAlert("Registration failed", "This username is already in use, please use another", "OK");
+							await DisplayAlert("Registration failed", "This email is already in use, please use another", "OK");
 						else if (item.Email == user.Email)
 							await DisplayAlert("Registration failed", "This email is already in use, please use another", "OK");
 						else
 						{
-							await App.Database.Insert(user);
-							App.Current.MainPage = new Login();
+                            Insert(user);
 						}
 					}
 				}
@@ -81,6 +80,12 @@ namespace U4A3.View
 				await DisplayAlert("Registration failed", "Unknown error", "OK");
 			}
 		}
+
+        async void Insert(User user)
+        {
+            await App.Database.Insert(user);
+            await Navigation.PopAsync();
+        }
 
 		private void Button_Login_Clicked(object sender, EventArgs e)
 		{

@@ -17,7 +17,7 @@ namespace U4A3.Data
 		{
 			database = new SQLiteAsyncConnection(Path);
 
-			database.CreateTableAsync<User>().Wait();
+            database.CreateTableAsync<User>().Wait();
 		}
 
 		// Insert user information into the database

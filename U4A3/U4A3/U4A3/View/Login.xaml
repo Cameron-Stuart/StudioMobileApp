@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="U4A3.View.Login">
+             x:Class="U4A3.View.Login"
+             Title="Login">
     <ContentPage.Content>
 		<Grid>
 			<!-- Column definitions -->
@@ -86,16 +87,11 @@
 					 Color="LightGray"/>
 
 			<!-- Bottom row buttons -->
-			<Button x:Name="Button_Register"
+            <Button x:Name="Button_Register"
 					Grid.Row="11"
 					Grid.Column="1"
 					Text="Register"
 					Clicked="Button_Register_Clicked"/>
-			<Button x:Name="Button_PassReset"
-					Grid.Row="11"
-					Grid.Column="3"
-					Text="Reset Password"
-					Clicked="Button_PassReset_Clicked"/>
-		</Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

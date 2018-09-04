@@ -15,6 +15,8 @@ namespace U4A3.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Login : ContentPage
 	{
+        public User CurrentUser;
+
 		public Login()
 		{
 			InitializeComponent ();
@@ -41,31 +43,34 @@ namespace U4A3.View
 					// If the username and passwords match between the database and user input
 					if (item.Username == user.Username && item.Password == user.Password)
 					{
-						// Checks if the account name, username and type properties are alread stores
-						// If either exists, it will delete them
-						if (App.Current.Properties.ContainsKey("account_type"))
-							App.Current.Properties.Remove("account_type");
-						if (App.Current.Properties.ContainsKey("account_name"))
-							App.Current.Properties.Remove("account_name");
-						if (App.Current.Properties.ContainsKey("account_username"))
-							App.Current.Properties.Remove("account_username");
+                        if (App.Current.Properties.ContainsKey("teacher"))
+                            App.Current.Properties.Remove("teacher");
+						// Creates a key if the user is a teacher
+						if (item.Type == "Teacher")
+							App.Current.Properties.Add("teacher", "Teacher");
 
-						// Save the user account type, name and username based on what is stored in the database (will be used later)
-						App.Current.Properties.Add("account_type", item.Type);
-						App.Current.Properties.Add("account_name", item.Name);
-						App.Current.Properties.Add("account_username", user.Username);
+                        // TEMP
+                        CurrentUser = new User
+                        {
+                            Name = item.Name,
+                            Type = item.Type
+                        };
 
-						// Changes the current page
-						// TODO: Change to home page
-						App.Current.MainPage = new Temp.UserTest();
-					}
-					else
-					{
-						// If it doesn't redirect away, login has failed
-						await DisplayAlert("Login failed", "Please check that your username and password are correct and try again", "OK");
-					}
-				}
-			}
+
+                        // Changes the current page
+                        NavPush();
+                    }
+                }
+
+                // If the username is blank...
+                if (Entry_Username.Text == "")
+                    // Display an error message saying to enter a username
+                    Label_UsernameError.Text = "Please enter your username";
+                // If the password is blank...
+                if (Entry_Password.Text == "")
+                    // Display an error message saying to enter a password
+                    Label_PasswordError.Text = "Please enter your password";
+            }
 			else
 			{
 				// If the username is blank...
@@ -79,14 +84,14 @@ namespace U4A3.View
 			}
 		}
 
-		private void Button_Register_Clicked(object sender, EventArgs e)
-		{
-			App.Current.MainPage = new Register();
-		}
+        private async void NavPush()
+        {
+            await Navigation.PushAsync(new Home());
+        }
 
-		private void Button_PassReset_Clicked(object sender, EventArgs e)
-		{
-			App.Current.MainPage = new Temp.AddContent();
-		}
+		private async void Button_Register_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Register());
+        }
 	}
 }
